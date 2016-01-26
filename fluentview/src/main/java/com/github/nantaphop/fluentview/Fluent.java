@@ -16,12 +16,25 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.github.nantaphop.fluentview.internal.FluentButton;
+import com.github.nantaphop.fluentview.internal.FluentCheckBox;
+import com.github.nantaphop.fluentview.internal.FluentEditText;
+import com.github.nantaphop.fluentview.internal.FluentImageButton;
+import com.github.nantaphop.fluentview.internal.FluentImageView;
+import com.github.nantaphop.fluentview.internal.FluentProgressBar;
+import com.github.nantaphop.fluentview.internal.FluentRadioButton;
+import com.github.nantaphop.fluentview.internal.FluentSeekBar;
+import com.github.nantaphop.fluentview.internal.FluentSwitch;
+import com.github.nantaphop.fluentview.internal.FluentTextView;
+import com.github.nantaphop.fluentview.internal.FluentToggleButton;
+
 /**
  * Created by nantaphop on 17-Jan-16.
  */
 public class Fluent {
+
     private Fluent() {
-    };
+    }
 
     public static FluentTextView withTextView(@NonNull Activity activity, @IdRes int id) {
         return new FluentTextView((TextView) activity.findViewById(id));

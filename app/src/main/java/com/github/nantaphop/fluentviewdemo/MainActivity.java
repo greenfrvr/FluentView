@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.nantaphop.fluentview.Fluent;
-import com.github.nantaphop.fluentview.FluentView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Fluent.withButton(this, R.id.button)
                 .setText("Hello From FluentButton")
                 .setAllCaps(true);
+
 
     }
 }
