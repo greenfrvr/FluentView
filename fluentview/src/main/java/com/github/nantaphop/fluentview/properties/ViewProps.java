@@ -12,10 +12,14 @@ import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
 import android.view.animation.Animation;
 
+import com.github.nantaphop.fluentview.Fluency;
+
 /**
  * Created by greenfrvr
  */
 public interface ViewProps {
+
+    Fluency and();
 
     ViewProps setAccessibilityDelegate(View.AccessibilityDelegate delegate);
 
@@ -129,31 +133,31 @@ public interface ViewProps {
 
     ViewProps setNextFocusUpId(int nextFocusUpId);
 
-    ViewProps setOnApplyWindowInsetsListener(android.view.View.OnApplyWindowInsetsListener listener);
+    ViewProps setOnApplyWindowInsetsListener(View.OnApplyWindowInsetsListener listener);
 
-    ViewProps setOnClickListener(android.view.View.OnClickListener l);
+    ViewProps setOnClickListener(View.OnClickListener l);
 
-    ViewProps setOnContextClickListener(android.view.View.OnContextClickListener l);
+    ViewProps setOnContextClickListener(View.OnContextClickListener l);
 
-    ViewProps setOnCreateContextMenuListener(android.view.View.OnCreateContextMenuListener l);
+    ViewProps setOnCreateContextMenuListener(View.OnCreateContextMenuListener l);
 
-    ViewProps setOnDragListener(android.view.View.OnDragListener l);
+    ViewProps setOnDragListener(View.OnDragListener l);
 
-    ViewProps setOnFocusChangeListener(android.view.View.OnFocusChangeListener l);
+    ViewProps setOnFocusChangeListener(View.OnFocusChangeListener l);
 
-    ViewProps setOnGenericMotionListener(android.view.View.OnGenericMotionListener l);
+    ViewProps setOnGenericMotionListener(View.OnGenericMotionListener l);
 
-    ViewProps setOnHoverListener(android.view.View.OnHoverListener l);
+    ViewProps setOnHoverListener(View.OnHoverListener l);
 
-    ViewProps setOnKeyListener(android.view.View.OnKeyListener l);
+    ViewProps setOnKeyListener(View.OnKeyListener l);
 
-    ViewProps setOnLongClickListener(android.view.View.OnLongClickListener l);
+    ViewProps setOnLongClickListener(View.OnLongClickListener l);
 
-    ViewProps setOnScrollChangeListener(android.view.View.OnScrollChangeListener l);
+    ViewProps setOnScrollChangeListener(View.OnScrollChangeListener l);
 
-    ViewProps setOnSystemUiVisibilityChangeListener(android.view.View.OnSystemUiVisibilityChangeListener l);
+    ViewProps setOnSystemUiVisibilityChangeListener(View.OnSystemUiVisibilityChangeListener l);
 
-    ViewProps setOnTouchListener(android.view.View.OnTouchListener l);
+    ViewProps setOnTouchListener(View.OnTouchListener l);
 
     ViewProps setOutlineProvider(ViewOutlineProvider provider);
 

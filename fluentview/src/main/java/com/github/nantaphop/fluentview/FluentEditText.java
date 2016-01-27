@@ -1,4 +1,4 @@
-package com.github.nantaphop.fluentview.internal;
+package com.github.nantaphop.fluentview;
 
 import android.widget.EditText;
 
@@ -7,10 +7,10 @@ import com.github.nantaphop.fluentview.properties.EditTextProps;
 /**
  * Created by nantaphop on 17-Jan-16.
  */
-public class FluentEditText extends FluentTextView<EditText> implements EditTextProps {
+class FluentEditText<T extends EditText> extends FluentTextView<T> implements EditTextProps {
 
-    public FluentEditText(EditText editText) {
-        super(editText);
+    public FluentEditText(T view) {
+        super(view);
     }
 
     @Override

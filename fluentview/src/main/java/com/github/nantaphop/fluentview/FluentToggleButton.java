@@ -1,4 +1,4 @@
-package com.github.nantaphop.fluentview.internal;
+package com.github.nantaphop.fluentview;
 
 import android.graphics.drawable.Drawable;
 import android.widget.ToggleButton;
@@ -8,9 +8,9 @@ import com.github.nantaphop.fluentview.properties.ToggleProps;
 /**
  * Created by nantaphop on 17-Jan-16.
  */
-public class FluentToggleButton extends FluentCompoundButton<ToggleButton> implements ToggleProps {
+class FluentToggleButton<T extends ToggleButton> extends FluentCompoundButton<T> implements ToggleProps {
 
-    public FluentToggleButton(ToggleButton view) {
+    public FluentToggleButton(T view) {
         super(view);
     }
 

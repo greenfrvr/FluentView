@@ -1,5 +1,6 @@
-package com.github.nantaphop.fluentview.internal;
+package com.github.nantaphop.fluentview;
 
+import android.annotation.TargetApi;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
@@ -10,7 +11,6 @@ import android.text.TextUtils;
 import android.text.method.KeyListener;
 import android.view.ActionMode;
 import android.view.inputmethod.ExtractedText;
-import android.widget.Button;
 import android.widget.Scroller;
 import android.widget.TextView;
 
@@ -24,10 +24,16 @@ import java.util.Locale;
 /**
  * Created by nantaphop on 17-Jan-16.
  */
-public class FluentButton<T extends Button> extends FluentView<T> implements TextProps {
+class FluentTextView<T extends TextView> extends FluentView<T> implements TextProps {
 
-    public FluentButton(T button) {
-        super(button);
+    public FluentTextView(T view) {
+        super(view);
+    }
+
+    @Override
+    public TextProps setEnabled(boolean enabled) {
+        view.setEnabled(enabled);
+        return this;
     }
 
     @Override
@@ -54,18 +60,21 @@ public class FluentButton<T extends Button> extends FluentView<T> implements Tex
         return this;
     }
 
+    @TargetApi(17)
     @Override
     public TextProps setCompoundDrawablesRelative(Drawable start, Drawable top, Drawable end, Drawable bottom) {
         view.setCompoundDrawablesRelative(start, top, end, bottom);
         return this;
     }
 
+    @TargetApi(17)
     @Override
     public TextProps setCompoundDrawablesRelativeWithIntrinsicBounds(int start, int top, int end, int bottom) {
         view.setCompoundDrawablesRelativeWithIntrinsicBounds(start, top, end, bottom);
         return this;
     }
 
+    @TargetApi(17)
     @Override
     public TextProps setCompoundDrawablesRelativeWithIntrinsicBounds(Drawable start, Drawable top, Drawable end, Drawable bottom) {
         view.setCompoundDrawablesRelativeWithIntrinsicBounds(start, top, end, bottom);
@@ -78,12 +87,14 @@ public class FluentButton<T extends Button> extends FluentView<T> implements Tex
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public TextProps setCompoundDrawableTintList(ColorStateList tint) {
         view.setCompoundDrawableTintList(tint);
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public TextProps setCompoundDrawableTintMode(PorterDuff.Mode tintMode) {
         view.setCompoundDrawableTintMode(tintMode);
@@ -91,11 +102,26 @@ public class FluentButton<T extends Button> extends FluentView<T> implements Tex
     }
 
     @Override
+    public TextProps setPadding(int left, int top, int right, int bottom) {
+        view.setPadding(left, top, right, bottom);
+        return this;
+    }
+
+    @TargetApi(16)
+    @Override
+    public TextProps setPaddingRelative(int start, int top, int end, int bottom) {
+        view.setPaddingRelative(start, top, end, bottom);
+        return this;
+    }
+
+    @TargetApi(23)
+    @Override
     public TextProps setTextAppearance(int resId) {
         view.setTextAppearance(resId);
         return this;
     }
 
+    @TargetApi(17)
     @Override
     public TextProps setTextLocale(Locale locale) {
         view.setTextLocale(locale);
@@ -126,30 +152,35 @@ public class FluentButton<T extends Button> extends FluentView<T> implements Tex
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public TextProps setElegantTextHeight(boolean elegant) {
         view.setElegantTextHeight(elegant);
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public TextProps setLetterSpacing(float letterSpacing) {
         view.setLetterSpacing(letterSpacing);
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public TextProps setBreakStrategy(int breakStrategy) {
         view.setBreakStrategy(breakStrategy);
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public TextProps setHyphenationFrequency(int hyphenationFrequency) {
         view.setHyphenationFrequency(hyphenationFrequency);
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public TextProps setFontFeatureSettings(String fontFeatureSettings) {
         view.setFontFeatureSettings(fontFeatureSettings);
@@ -300,6 +331,7 @@ public class FluentButton<T extends Button> extends FluentView<T> implements Tex
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public TextProps setCustomInsertionActionModeCallback(ActionMode.Callback actionModeCallback) {
         view.setCustomInsertionActionModeCallback(actionModeCallback);
@@ -315,6 +347,12 @@ public class FluentButton<T extends Button> extends FluentView<T> implements Tex
     @Override
     public TextProps setScroller(Scroller s) {
         view.setScroller(s);
+        return this;
+    }
+
+    @Override
+    public TextProps setSelected(boolean selected) {
+        view.setSelected(selected);
         return this;
     }
 

@@ -1,5 +1,6 @@
-package com.github.nantaphop.fluentview.internal;
+package com.github.nantaphop.fluentview;
 
+import android.annotation.TargetApi;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.ColorFilter;
@@ -15,10 +16,10 @@ import com.github.nantaphop.fluentview.properties.ImageProps;
 /**
  * Created by nantaphop on 17-Jan-16.
  */
-public class FluentImageView<T extends ImageView> extends FluentView<T> implements ImageProps {
+class FluentImageView<T extends ImageView> extends FluentView<T> implements ImageProps {
 
-    public FluentImageView(T imageView) {
-        super(imageView);
+    public FluentImageView(T view) {
+        super(view);
     }
     
     @Override
@@ -50,13 +51,15 @@ public class FluentImageView<T extends ImageView> extends FluentView<T> implemen
         view.setColorFilter(cf);
         return this;
     }
-    
+
+    @TargetApi(16)
     @Override
     public ImageProps setCropToPadding(boolean cropToPadding) {
         view.setCropToPadding(cropToPadding);
         return this;
     }
 
+    @TargetApi(16)
     @Override
     public ImageProps setImageAlpha(int alpha) {
         view.setImageAlpha(alpha);
@@ -74,7 +77,8 @@ public class FluentImageView<T extends ImageView> extends FluentView<T> implemen
         view.setImageDrawable(drawable);
         return this;
     }
-    
+
+    @TargetApi(23)
     @Override
     public ImageProps setImageIcon(Icon icon) {
         view.setImageIcon(icon);
@@ -104,13 +108,15 @@ public class FluentImageView<T extends ImageView> extends FluentView<T> implemen
         view.setImageState(state, merge);
         return this;
     }
-    
+
+    @TargetApi(21)
     @Override
     public ImageProps setImageTintList(ColorStateList tint) {
         view.setImageTintList(tint);
         return this;
     }
-    
+
+    @TargetApi(21)
     @Override
     public ImageProps setImageTintMode(PorterDuff.Mode tintMode) {
         view.setImageTintMode(tintMode);

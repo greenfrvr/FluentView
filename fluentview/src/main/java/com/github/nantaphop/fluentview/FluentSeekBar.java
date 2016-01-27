@@ -1,5 +1,6 @@
-package com.github.nantaphop.fluentview.internal;
+package com.github.nantaphop.fluentview;
 
+import android.annotation.TargetApi;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -10,9 +11,9 @@ import com.github.nantaphop.fluentview.properties.SeekProps;
 /**
  * Created by nantaphop on 17-Jan-16.
  */
-public class FluentSeekBar extends FluentProgressBar<SeekBar> implements SeekProps {
+class FluentSeekBar<T extends SeekBar> extends FluentProgressBar<T> implements SeekProps {
 
-    public FluentSeekBar(SeekBar view) {
+    public FluentSeekBar(T view) {
         super(view);
     }
 
@@ -22,6 +23,7 @@ public class FluentSeekBar extends FluentProgressBar<SeekBar> implements SeekPro
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public SeekProps setSplitTrack(boolean splitTrack) {
         view.setSplitTrack(splitTrack);
@@ -40,12 +42,14 @@ public class FluentSeekBar extends FluentProgressBar<SeekBar> implements SeekPro
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public SeekProps setThumbTintList(ColorStateList tint) {
         view.setThumbTintList(tint);
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public SeekProps setThumbTintMode(PorterDuff.Mode tintMode) {
         view.setThumbTintMode(tintMode);

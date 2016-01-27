@@ -1,6 +1,7 @@
-package com.github.nantaphop.fluentview.internal;
+package com.github.nantaphop.fluentview;
 
 import android.animation.StateListAnimator;
+import android.annotation.TargetApi;
 import android.content.res.ColorStateList;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -18,7 +19,7 @@ import com.github.nantaphop.fluentview.properties.ViewProps;
 /**
  * Created by nantaphop on 17-Jan-16.
  */
-public class FluentView<T extends View> implements ViewProps {
+class FluentView<T extends View> implements ViewProps {
 
     T view;
 
@@ -27,23 +28,31 @@ public class FluentView<T extends View> implements ViewProps {
     }
 
     @Override
+    public Fluency and() {
+        return Fluency.instance();
+    }
+
+    @Override
     public ViewProps setAccessibilityDelegate(View.AccessibilityDelegate delegate) {
         view.setAccessibilityDelegate(delegate);
         return this;
     }
 
+    @TargetApi(19)
     @Override
     public ViewProps setAccessibilityLiveRegion(int mode) {
         view.setAccessibilityLiveRegion(mode);
         return this;
     }
 
+    @TargetApi(22)
     @Override
     public ViewProps setAccessibilityTraversalAfter(int afterId) {
         view.setAccessibilityTraversalAfter(afterId);
         return this;
     }
 
+    @TargetApi(22)
     @Override
     public ViewProps setAccessibilityTraversalBefore(int beforeId) {
         view.setAccessibilityTraversalBefore(beforeId);
@@ -68,6 +77,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(16)
     @Override
     public ViewProps setBackground(Drawable background) {
         view.setBackground(background);
@@ -92,12 +102,14 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public ViewProps setBackgroundTintList(ColorStateList tint) {
         view.setBackgroundTintList(tint);
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public ViewProps setBackgroundTintMode(PorterDuff.Mode tintMode) {
         view.setBackgroundTintMode(tintMode);
@@ -116,12 +128,14 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(18)
     @Override
     public ViewProps setClipBounds(Rect clipBounds) {
         view.setClipBounds(clipBounds);
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public ViewProps setClipToOutline(boolean clipToOutline) {
         view.setClipToOutline(clipToOutline);
@@ -134,6 +148,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public ViewProps setContextClickable(boolean contextClickable) {
         view.setContextClickable(contextClickable);
@@ -164,6 +179,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public ViewProps setElevation(float elevation) {
         view.setElevation(elevation);
@@ -206,24 +222,28 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public ViewProps setForeground(Drawable foreground) {
         view.setForeground(foreground);
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public ViewProps setForegroundGravity(int gravity) {
         view.setForegroundGravity(gravity);
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public ViewProps setForegroundTintList(ColorStateList tint) {
         view.setForegroundTintList(tint);
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public ViewProps setForegroundTintMode(PorterDuff.Mode tintMode) {
         view.setForegroundTintMode(tintMode);
@@ -236,6 +256,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(16)
     @Override
     public ViewProps setHasTransientState(boolean hasTransientState) {
         view.setHasTransientState(hasTransientState);
@@ -266,6 +287,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(16)
     @Override
     public ViewProps setImportantForAccessibility(int mode) {
         view.setImportantForAccessibility(mode);
@@ -278,12 +300,14 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(17)
     @Override
     public ViewProps setLabelFor(int id) {
         view.setLabelFor(id);
         return this;
     }
 
+    @TargetApi(17)
     @Override
     public ViewProps setLayerPaint(Paint paint) {
         view.setLayerPaint(paint);
@@ -296,6 +320,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(17)
     @Override
     public ViewProps setLayoutDirection(int layoutDirection) {
         view.setLayoutDirection(layoutDirection);
@@ -326,6 +351,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public ViewProps setNestedScrollingEnabled(boolean enabled) {
         view.setNestedScrollingEnabled(enabled);
@@ -362,6 +388,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(20)
     @Override
     public ViewProps setOnApplyWindowInsetsListener(View.OnApplyWindowInsetsListener listener) {
         view.setOnApplyWindowInsetsListener(listener);
@@ -374,6 +401,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public ViewProps setOnContextClickListener(View.OnContextClickListener l) {
         view.setOnContextClickListener(l);
@@ -422,6 +450,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public ViewProps setOnScrollChangeListener(View.OnScrollChangeListener l) {
         view.setOnScrollChangeListener(l);
@@ -440,6 +469,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public ViewProps setOutlineProvider(ViewOutlineProvider provider) {
         view.setOutlineProvider(provider);
@@ -458,6 +488,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(17)
     @Override
     public ViewProps setPaddingRelative(int start, int top, int end, int bottom) {
         view.setPaddingRelative(start, top, end, bottom);
@@ -524,12 +555,14 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(16)
     @Override
     public ViewProps setScrollBarDefaultDelayBeforeFade(int scrollBarDefaultDelayBeforeFade) {
         view.setScrollBarDefaultDelayBeforeFade(scrollBarDefaultDelayBeforeFade);
         return this;
     }
 
+    @TargetApi(16)
     @Override
     public ViewProps setScrollBarFadeDuration(int scrollBarFadeDuration) {
         view.setScrollBarFadeDuration(scrollBarFadeDuration);
@@ -542,6 +575,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(16)
     @Override
     public ViewProps setScrollBarSize(int scrollBarSize) {
         view.setScrollBarSize(scrollBarSize);
@@ -560,12 +594,14 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public ViewProps setScrollIndicators(int indicators) {
         view.setScrollIndicators(indicators);
         return this;
     }
 
+    @TargetApi(23)
     @Override
     public ViewProps setScrollIndicators(int indicators, int mask) {
         view.setScrollIndicators(indicators, mask);
@@ -596,6 +632,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public ViewProps setStateListAnimator(StateListAnimator stateListAnimator) {
         view.setStateListAnimator(stateListAnimator);
@@ -620,12 +657,14 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(17)
     @Override
     public ViewProps setTextAlignment(int textAlignment) {
         view.setTextAlignment(textAlignment);
         return this;
     }
 
+    @TargetApi(17)
     @Override
     public ViewProps setTextDirection(int textDirection) {
         view.setTextDirection(textDirection);
@@ -650,6 +689,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public ViewProps setTranslationZ(float translationZ) {
         view.setTranslationZ(translationZ);
@@ -704,6 +744,7 @@ public class FluentView<T extends View> implements ViewProps {
         return this;
     }
 
+    @TargetApi(21)
     @Override
     public ViewProps setZ(float z) {
         view.setZ(z);
